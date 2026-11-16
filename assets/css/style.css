@@ -211,12 +211,12 @@ b{font-weight:700}
 .passions li:hover .p-desc{opacity:1}
 /* ============ WORK ============ */
 .work{position:relative;background:var(--ink);color:var(--paper);overflow:hidden}
-.work-pin{height:100vh;height:100svh;display:flex;align-items:center}
+.work-pin{height:100vh;height:100svh;display:flex;align-items:center;padding-top:50px}
 .work-track{display:flex;align-items:center;gap:clamp(24px,3vw,50px);padding:0 var(--pad);will-change:transform}
 .work-intro{flex:0 0 auto;width:clamp(300px,34vw,560px);padding-right:2vw}
 .work-intro .type-label{margin-bottom:20px;color:var(--pink)}
 .work-hint{font-size:22px;margin-top:30px;color:var(--pink)}
-.case{position:relative;flex:0 0 auto;width:clamp(320px,36vw,560px);min-height:min(78vh,700px);background:var(--paper);color:var(--ink);padding:clamp(24px,2.6vw,42px);border-radius:3px;display:flex;flex-direction:column;box-shadow:0 30px 50px -20px rgba(0,0,0,.6)}
+.case{position:relative;flex:0 0 auto;width:clamp(360px,44vw,680px);min-height:min(80vh,720px);background:var(--paper);color:var(--ink);padding:clamp(24px,2.6vw,42px);border-radius:3px;display:flex;flex-direction:column;box-shadow:0 30px 50px -20px rgba(0,0,0,.6)}
 .case:nth-child(odd){transform:rotate(1.4deg)}
 .case:nth-child(even){transform:rotate(-1.2deg)}
 .case-alt{background:#ece7da}
@@ -226,9 +226,9 @@ b{font-weight:700}
 .case .type-label{margin-bottom:10px;max-width:72%}
 .case-co{font-family:var(--brush);font-weight:400;font-size:clamp(38px,3.6vw,62px);line-height:.9;text-transform:uppercase;margin-bottom:4px}
 .case-role{font-family:var(--marker);font-size:18px;margin-bottom:16px}
-.case ul{list-style:none;font-size:14px;line-height:1.45}
-.case li{padding:7px 0 7px 22px;position:relative;border-top:1px dashed rgba(0,0,0,.25)}
-.case li::before{content:"✶";position:absolute;left:0;top:7px;color:var(--red);font-size:12px}
+.case ul{list-style:none;font-size:13.5px;line-height:1.4}
+.case li{padding:6px 0 6px 22px;position:relative;border-top:1px dashed rgba(0,0,0,.25)}
+.case li::before{content:"✶";position:absolute;left:0;top:6px;color:var(--red);font-size:12px}
 .case-pink li::before{color:var(--ink)}
 .case-aside{font-size:18px;margin-top:18px;transform:rotate(-2deg)}
 .case-stat{margin-top:auto;padding-top:16px;display:flex;align-items:flex-end;gap:12px}

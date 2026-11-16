@@ -392,20 +392,6 @@
   $$(".stamp").forEach(s => s.style.setProperty("--r", rand(-5, 5).toFixed(1) + "deg"));
   gsap.from(".stamp", { scale: 0, rotate: () => rand(-40, 40), duration: .7, ease: "back.out(2)", stagger: .05, scrollTrigger: { trigger: "#stamps", start: "top 85%" } });
   gsap.from(".passions li", { xPercent: -30, opacity: 0, duration: 1, ease: "expo.out", stagger: .08, scrollTrigger: { trigger: ".passions", start: "top 80%" } });
-  if (fine) {
-    const fi = $("#floatImg");
-    const fx = gsap.quickTo(fi, "x", { duration: .6, ease: "power3" }), fy = gsap.quickTo(fi, "y", { duration: .6, ease: "power3" });
-    let lastX = 0;
-    $$("#passions li").forEach(li => {
-      li.addEventListener("mouseenter", () => { fi.src = li.dataset.img; gsap.to(fi, { opacity: 1, scale: 1, duration: .4, ease: "back.out(1.6)" }); });
-      li.addEventListener("mouseleave", () => gsap.to(fi, { opacity: 0, scale: .6, duration: .3 }));
-    });
-    $("#passions").addEventListener("mousemove", e => {
-      fx(e.clientX + 30); fy(e.clientY - 160);
-      gsap.to(fi, { rotate: gsap.utils.clamp(-18, 18, (e.clientX - lastX) * .8), duration: .5 });
-      lastX = e.clientX;
-    });
-  }
 
   /* ---------- contact ---------- */
   const big = $("#repel");
