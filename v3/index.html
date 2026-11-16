@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clément Bonnand — Portfolio Vol. 1</title>
+<meta name="description" content="Clément Bonnand, 23 — Master 2 student in Marketing, Brand Strategy &amp; Communication (2027), apprentice at DC Shoes Europe. An interactive record.">
+<meta property="og:title" content="Clément Bonnand — Portfolio Vol. 1">
+<meta property="og:description" content="Marketing &amp; communication. Open to full-time roles from September 2027.">
+<meta property="og:image" content="../assets/img/me/sunset-sm.webp">
+<meta name="theme-color" content="#050505">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="preload" href="../assets/fonts/unbounded-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body class="is-loading">
+
+<div id="loader">
+  <div class="ld-disc"><i></i></div>
+  <p class="ld-num"><span id="ldNum">0</span>%</p>
+  <p class="ld-txt mono">dropping the needle</p>
+</div>
+
+<div class="bg" aria-hidden="true"></div>
+<div class="hero-name" aria-hidden="true"><span>Clément</span><span>Bonnand</span></div>
+<canvas id="gl" aria-label="Interactive 3D record held by two hands"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="logo" href="#" data-go="0">C.B<sup>vol.1</sup></a>
+  <p class="top-mid mono"><span class="dot"></span>open to full-time roles — sept. 2027</p>
+  <nav class="top-links mono"><a href="../">v.01</a><a href="../v2/">v.02</a><button id="tlBtn">tracklist ☰</button></nav>
+</header>
+
+<main class="panels">
+  <!-- 00 -->
+  <article class="ch ch-hero" data-i="0">
+    <p class="mono k">Portfolio — Vol. 1 — 2027</p>
+    <p class="hero-line">Marketing &amp; communication.<br>Master 2 student, apprentice at <b>DC&nbsp;Shoes Europe</b>.</p>
+    <p class="mono hint">scroll to play the record · drag to turn it</p>
+  </article>
+
+  <!-- 01 -->
+  <article class="ch" data-i="1">
+    <p class="mono k">Track 01 — Who's the guy</p>
+    <h2>If I had to define myself in one word: <em>creative.</em></h2>
+    <p>I'm 23, I grew up on <b>Saint-Martin</b> in the Caribbean, and I'm finishing a Master 2 in Marketing, Brand Strategy &amp; Communication while working in the marketing team of <b>DC&nbsp;Shoes Europe</b>. Fashion, surf, art, music and travel are what drive me — and where I want to work.</p>
+    <dl class="facts">
+      <dt>Degree</dt><dd>Master 2 — Marketing, Brand Strategy &amp; Communication · INSEEC · 2027</dd>
+      <dt>Based in</dt><dd>Hendaye, Basque coast</dd>
+      <dt>Languages</dt><dd>French · English C1 · Spanish B1</dd>
+    </dl>
+  </article>
+
+  <!-- 02 -->
+  <article class="ch" data-i="2">
+    <p class="mono k">Track 02 — Saint-Martin · 18°04′N 63°03′W</p>
+    <h2><span class="big-n">11</span> years on the island</h2>
+    <figure class="ph"><img src="../assets/img/me/stmartin-sm.webp" width="1000" height="667" alt="Childhood on a beach in Saint-Martin" loading="lazy"></figure>
+    <p>Eleven years in <b>Saint-Martin, French West Indies</b>: turquoise water, two languages a day and music coming out of every car window. My eye for colour and my love for reggae and rap start there.</p>
+  </article>
+
+  <!-- 03 -->
+  <article class="ch" data-i="3">
+    <p class="mono k">Track 03 — Atlantic coast &amp; the road</p>
+    <h2>Then I moved back to France, on the Atlantic coast.</h2>
+    <p>In 2024 surf even became my first project — <b>Surfattitude</b>, a surf-poncho brand I designed and sold myself. Today I live in Hendaye.</p>
+    <p class="mono k k2">10 places I've been</p>
+    <ul class="places"><li class="hl">Saint-Martin <small>11 yrs</small></li><li>Florida</li><li>Mexico</li><li>Dominican Rep.</li><li>Andalusia</li><li>Portugal</li><li>Ireland</li><li>New York</li><li>Balearics</li><li>Lanzarote</li></ul>
+  </article>
+
+  <!-- 04 -->
+  <article class="ch ch-wide" data-i="4">
+    <p class="mono k">Track 04 — Oct. 2025 → Sept. 2027 · work-study · Saint-Jean-de-Luz</p>
+    <h2>DC Shoes Europe <em>— Marketing Apprentice</em></h2>
+    <ul class="bul">
+      <li>Help build and roll out the <b>seasonal marketing strategy</b> across wholesale, retail &amp; e-commerce, alongside Brand &amp; Product Managers.</li>
+      <li>Coordinate <b>studio production</b> for lookbook &amp; e-com: creative briefs, moodboards, looks.</li>
+      <li>Build <b>Social Media Ads</b> campaigns around product launches &amp; key brand moments.</li>
+      <li>Work on <b>collection execution plans</b>, in line with brand goals, marketing assortments &amp; the creative vision.</li>
+      <li>Present marketing &amp; creative directions at <b>kick-off meetings</b>, with ideas for improvement.</li>
+      <li>Align regional needs, buying &amp; marketing assets with the <b>Planning &amp; Design</b> teams.</li>
+      <li>Prepare the <b>monthly marketing presentations</b> shared with international teams and presented to the US headquarters.</li>
+      <li>Run <b>product seeding</b>: sourcing influencers, skaters &amp; artists who fit the brand, and building relationships for future collabs.</li>
+    </ul>
+  </article>
+
+  <!-- 05 -->
+  <article class="ch ch-wide" data-i="5">
+    <p class="mono k">Tracks 05 &amp; 06</p>
+    <div class="two">
+      <div>
+        <h3>Rotary Club <em>Communication &amp; Partnerships Intern</em></h3>
+        <p class="mono k k3">Jan. 2025 · 5 weeks · Tarbes</p>
+        <ul class="bul">
+          <li>Built the <b>multichannel communication plan</b> for the “Vins, Terroir et Traditions” fair: social media &amp; print.</li>
+          <li>Grew the network of <b>partners &amp; exhibitors</b>.</li>
+          <li>Set up <b>Excel dashboards</b> to track accounting &amp; cash flow.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Surfattitude <em>Founder — my own surf-poncho brand</em></h3>
+        <p class="mono k k3">Apr. → Dec. 2024 · Landes</p>
+        <ul class="bul">
+          <li>Designed a <b>300-piece collection</b>, from idea to production with the factory.</li>
+          <li>Sold it <b>direct-to-consumer</b>: Landes markets + a <b>Shopify</b> store.</li>
+          <li>Surf-influencer collabs, giveaways &amp; Instagram.</li>
+          <li>Orders, shipping, customer service &amp; stock.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- 06 -->
+  <article class="ch ch-wide" data-i="6">
+    <p class="mono k">Tracks 07 &amp; 08</p>
+    <div class="two">
+      <div>
+        <h3>DC Shoes <em>Marketing &amp; Product Intern</em></h3>
+        <p class="mono k k3">Jan. 2023 &amp; Apr. → May 2024 · Saint-Jean-de-Luz</p>
+        <ul class="bul">
+          <li>Promotional materials, sales tools &amp; <b>social media / seeding</b> for collections.</li>
+          <li>Tracked <b>KPIs by channel</b> and suggested action plans.</li>
+          <li>Competitive analysis for brand presentations &amp; seasonal ranges.</li>
+          <li>Collection presentations at the <b>DC Showroom</b> (Elastic Suite, PLM).</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Summer jobs <em>Southwest · Hendaye town hall</em></h3>
+        <p class="mono k k3">Summers 2021 → 2025</p>
+        <ul class="bul">
+          <li><b>Southwest</b> (clothing store) — sales, customer advice, visual merchandising &amp; sales events.</li>
+          <li><b>Hendaye town hall</b> (2021) — seasonal municipal agent.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- 07 -->
+  <article class="ch" data-i="7">
+    <p class="mono k">Track 09 — School of thought</p>
+    <ol class="school">
+      <li><span class="mono">2025 — 2027</span><b>Master 2 — Marketing, Brand Strategy &amp; Communication</b><span>INSEEC MSc · Bordeaux · work-study</span></li>
+      <li><span class="mono">2022 — 2025</span><b>Bachelor (BUT TC) — Digital Marketing, E-business &amp; Entrepreneurship</b><span>IUT de Tarbes</span></li>
+      <li><span class="mono">2022</span><b>French Baccalauréat — Maths &amp; Physics-Chemistry</b></li>
+    </ol>
+  </article>
+
+  <!-- 08 -->
+  <article class="ch" data-i="8">
+    <p class="mono k">Track 10 — What I'm into</p>
+    <ul class="into"><li>Fashion</li><li>Art</li><li>Music</li><li>Surf</li><li>Travel</li></ul>
+    <p class="mono k k2">Toolbox</p>
+    <ul class="chips"><li>Marketing</li><li>Communication</li><li>Seasonal marketing</li><li>Event marketing</li><li>Photo shoots</li><li>Social media ads</li><li>AI imagery</li><li>Shopify</li><li>Data analysis</li><li>Seeding</li><li>Artist relations</li></ul>
+  </article>
+
+  <!-- 09 -->
+  <article class="ch ch-wide" data-i="9">
+    <p class="mono k">Track 11 — On repeat · <span id="nowPlaying">pick a track</span></p>
+    <div class="two pl">
+      <div><p class="mono side">Side A — en français</p><ol id="sideA" class="tracks"></ol></div>
+      <div><p class="mono side">Side B — in English</p><ol id="sideB" class="tracks"></ol></div>
+    </div>
+  </article>
+
+  <!-- 10 -->
+  <article class="ch ch-wide" data-i="10">
+    <p class="mono k">Track 12 — AI Lab</p>
+    <h2>Concept visuals for <b>DC&nbsp;Shoes</b>, generated with AI.</h2>
+    <div class="strip" id="strip"></div>
+    <a class="btn" href="../assets/Clement-Bonnand-AI-Portfolio.pdf" target="_blank" rel="noopener">Full AI portfolio — PDF ↗</a>
+  </article>
+
+  <!-- 11 -->
+  <article class="ch ch-contact" data-i="11">
+    <p class="mono k">Outro — next chapter, September 2027</p>
+    <h2 class="talk">Let's talk</h2>
+    <p>Looking for a <b>full-time role</b> in marketing &amp; communication — ideally in music, fashion or sport.</p>
+    <button class="mail" id="mail" data-mail="clementbonnand1@gmail.com">clementbonnand1@gmail.com</button>
+    <div class="row">
+      <a class="btn" href="mailto:clementbonnand1@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/cl%C3%A9ment-bonnand-44ab68271/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="../assets/Clement-Bonnand-AI-Portfolio.pdf" target="_blank" rel="noopener">AI portfolio ↗</a>
+    </div>
+  </article>
+</main>
+
+<!-- player bar = navigation -->
+<footer class="player">
+  <button class="pb prev" id="prev" aria-label="Previous track">⏮</button>
+  <button class="pb play" id="next" aria-label="Next track">▶</button>
+  <div class="pinfo">
+    <p class="mono"><span id="pNum">00</span> — <span id="pTitle">Cover</span></p>
+    <div class="bar" id="bar"><i id="barFill"></i><div class="ticks" id="ticks"></div></div>
+  </div>
+  <p class="mono ptime"><span id="pTime">00:00</span> / 42:00</p>
+</footer>
+
+<div class="tracklist" id="tracklist" aria-hidden="true">
+  <button class="tl-close mono" id="tlClose">close ✕</button>
+  <p class="mono k">Clément Bonnand — Portfolio Vol. 1</p>
+  <ol id="tlList"></ol>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true"><button class="mono lb-x">close ✕</button><img alt=""></div>
+<div class="toast mono" id="toast">copied ✶</div>
+
+<div id="scroll" aria-hidden="true"></div>
+
+<script src="../assets/js/vendor/gsap.min.js"></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
