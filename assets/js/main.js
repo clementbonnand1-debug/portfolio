@@ -132,7 +132,8 @@
     track.innerHTML = inner + inner + inner;
     let x = 0, w = 0;
     const measure = () => { w = track.scrollWidth / 3; };
-    measure(); addEventListener("resize", measure);
+    measure(); addEventListener("resize", measure); addEventListener("load", measure);
+    $$("img", track).forEach(i => i.addEventListener("load", measure));
     let hover = false;
     track.addEventListener("mouseenter", () => hover = true);
     track.addEventListener("mouseleave", () => hover = false);
@@ -153,7 +154,7 @@
   $$("[data-speed]").forEach(el => {
     gsap.to(el, { yPercent: parseFloat(el.dataset.speed) * 100, ease: "none", scrollTrigger: { trigger: el.closest("section"), start: "top bottom", end: "bottom top", scrub: true } });
   });
-  gsap.from(".brief-photos figure", { scale: .85, rotate: (i) => i ? 8 : -8, opacity: 0, duration: 1.2, ease: "expo.out", stagger: .15, scrollTrigger: { trigger: ".brief", start: "top 75%" } });
+  gsap.from(".brief-photos figure", { scale: .85, rotate: -8, opacity: 0, duration: 1.2, ease: "expo.out", stagger: .15, scrollTrigger: { trigger: ".brief", start: "top 75%" } });
   $$(".brief [data-split], .story [data-split], .playlist [data-split], .school [data-split], .skills [data-split]").forEach(el => {
     ScrollTrigger.create({ trigger: el, start: "top 85%", once: true, onEnter: () => revealSplit(el) });
   });
@@ -243,7 +244,7 @@
     const f = document.createElement("figure");
     if (cls) f.className = cls;
     f.dataset.lb = group; f.dataset.i = i; f.dataset.cursor = "view";
-    f.innerHTML = `<img src="${src}" alt="AI-generated concept visual for DC Shoes" loading="lazy" draggable="false">`;
+    f.innerHTML = `<img src="${src}" alt="AI-generated concept visual for DC Shoes" ${group === "beauty" ? 'width="900" height="506"' : ""} loading="lazy" draggable="false">`;
     return f;
   }
   // beauty belts
@@ -273,7 +274,7 @@
       const z = -i * SP - 1200 + p * DEPTH;
       const op = Math.max(0, Math.min(1, (z + 4600) / 1800)) * Math.max(0, Math.min(1, (650 - z) / 450));
       const x = Math.cos(c.ang) * rx * c.r, y = Math.sin(c.ang) * ry * c.r;
-      c.el.style.transform = `translate3d(${x}px,${y}px,${z}px) rotate(${c.rot}deg)`;
+      c.el.style.transform = `translate(-50%,-50%) translate3d(${x}px,${y}px,${z}px) rotate(${c.rot}deg)`;
       c.el.style.opacity = op;
       c.el.style.visibility = op <= 0.01 ? "hidden" : "visible";
     }
@@ -388,8 +389,6 @@
   })();
 
   /* ---------- off duty ---------- */
-  gsap.to(".sil-img", { yPercent: 14, ease: "none", scrollTrigger: { trigger: ".sil", start: "top bottom", end: "bottom top", scrub: true } });
-  gsap.from(".sil-text", { y: 120, opacity: 0, duration: 1.4, ease: "expo.out", scrollTrigger: { trigger: ".sil", start: "top 40%" } });
   $$(".stamp").forEach(s => s.style.setProperty("--r", rand(-5, 5).toFixed(1) + "deg"));
   gsap.from(".stamp", { scale: 0, rotate: () => rand(-40, 40), duration: .7, ease: "back.out(2)", stagger: .05, scrollTrigger: { trigger: "#stamps", start: "top 85%" } });
   gsap.from(".passions li", { xPercent: -30, opacity: 0, duration: 1, ease: "expo.out", stagger: .08, scrollTrigger: { trigger: ".passions", start: "top 80%" } });
