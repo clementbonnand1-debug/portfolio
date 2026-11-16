@@ -171,9 +171,6 @@
   $$(".ch-big").forEach(t => gsap.from(t, { xPercent: -20, opacity: 0, duration: 1.3, ease: "expo.out", scrollTrigger: { trigger: t, start: "top 85%" } }));
   $$(".ch-body > *").forEach(el => gsap.from(el, { y: 60, opacity: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%" } }));
   if (!reduced) {
-    gsap.to(".wave.w1", { x: "-50%", duration: 7, ease: "none", repeat: -1 });
-    gsap.to(".wave.w2", { x: "-50%", duration: 11, ease: "none", repeat: -1 });
-    gsap.to(".sun", { y: 40, ease: "none", scrollTrigger: { trigger: ".island-card", start: "top bottom", end: "bottom top", scrub: true } });
   }
   $$(".coast-img, .road-img").forEach(f => gsap.fromTo(f, { y: 80 }, { y: -80, ease: "none", scrollTrigger: { trigger: f, start: "top bottom", end: "bottom top", scrub: true } }));
 
@@ -185,7 +182,8 @@
   function fillSide(sel, list, side) {
     list.forEach(([name, tag]) => {
       const li = document.createElement("li"); li.className = "track";
-      li.innerHTML = `<a href="https://open.spotify.com/search/${encodeURIComponent(name)}" target="_blank" rel="noopener" data-cursor="play"><span class="t-name">${name}</span><span class="t-tag">${tag}<em>listen on spotify ↗</em></span></a>`;
+      const ini = name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+      li.innerHTML = `<a href="https://open.spotify.com/search/${encodeURIComponent(name)}" target="_blank" rel="noopener" data-cursor="play"><span class="t-badge b${(name.length + side.charCodeAt(0)) % 4}" style="--r:${rand(-12, 12).toFixed(0)}deg">${ini}</span><span class="t-name">${name}</span><span class="t-tag">${tag}<em>listen on spotify ↗</em></span></a>`;
       const set = () => { vNow.textContent = name; vSide.textContent = "side " + side + " · " + tag; };
       li.addEventListener("mouseenter", () => { set(); playing = true; deck.classList.add("playing"); });
       li.addEventListener("mouseleave", () => { if (!$(".track.on")) { playing = false; deck.classList.remove("playing"); } });
