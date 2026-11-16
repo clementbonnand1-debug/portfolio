@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clément Bonnand — Marketing, Brand Strategy &amp; Communication</title>
+<meta name="description" content="Clément Bonnand, 23 — Master 2 student in Marketing, Brand Strategy &amp; Communication (2027), apprentice at DC Shoes Europe.">
+<meta property="og:title" content="Clément Bonnand — Portfolio">
+<meta property="og:description" content="Marketing &amp; communication. Open to full-time roles from September 2027.">
+<meta property="og:image" content="assets/img/me/sunset-sm.webp">
+<meta name="theme-color" content="#fbfbf8">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="preload" href="../assets/fonts/reenie.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ SVG DEFS ============ -->
+<svg class="defs" aria-hidden="true" width="0" height="0">
+  <defs>
+    <filter id="boil" x="-5%" y="-8%" width="110%" height="116%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="3" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 1.85" result="mask"/>
+      <feComposite in="SourceGraphic" in2="mask" operator="in" result="tex"/>
+      <feTurbulence id="boilTurb" type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="1" result="warp"/>
+      <feDisplacementMap in="tex" in2="warp" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <p class="loader-hand boil">loading</p>
+    <div class="loader-count"><span id="loadNum">00</span></div>
+    <div class="loader-words"><span id="loadWord">mixing the ink</span></div>
+  </div>
+  <svg class="loader-edge" viewBox="0 0 1000 40" preserveAspectRatio="none"><path id="tornPath" d=""/></svg>
+</div>
+
+<canvas id="ink" aria-hidden="true"></canvas>
+<div id="cursor" aria-hidden="true"><div class="c-dot"></div><div class="c-ring"><span class="c-label"></span></div></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="holes" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="spine" aria-hidden="true"><b>Clément Bonnand</b><span>portfolio collection — 2027</span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a href="#top" class="nav-logo boil" data-cursor="home">C.B<span class="red">✶</span></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#brief" data-scramble>About</a>
+    <a href="#story" data-scramble>Story</a>
+    <a href="#work" data-scramble>Work</a>
+    <a href="#ailab" data-scramble>AI&nbsp;Lab</a>
+    <a href="#contact" data-scramble>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button id="inkToggle" class="ink-toggle" data-cursor="toggle" aria-pressed="true">ink: <b>on</b></button>
+    <span class="avail"><i></i>Available Sept. 2027</span>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <p class="type-label hero-kicker">Portfolio — 2027</p>
+    <h1 class="hero-name">
+      <span class="hn-line boil" data-split>Clément</span>
+      <span class="hn-line hn-2"><span class="boil" data-split>Bonnand</span>
+        <svg class="scribble-circle hero-circle" viewBox="0 0 400 130" preserveAspectRatio="none"><path d="M40 78 C18 40 140 10 236 12 C336 14 398 40 384 74 C370 110 236 122 142 114 C58 108 6 90 24 60 C42 32 130 18 214 18"/></svg>
+      </span>
+    </h1>
+    <p class="hero-line">Marketing &amp; communication. Master 2 student, apprentice at <b>DC&nbsp;Shoes Europe</b>.</p>
+    <p class="hero-avail"><i></i>Open to full-time roles from September 2027</p>
+  </div>
+  <figure class="hero-photo torn">
+    <svg class="loop" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 18 C70 14 22 70 30 150 C38 236 110 288 176 276 C250 262 286 196 270 120 C256 52 196 20 132 30 C80 40 52 84 60 130"/></svg>
+    <img src="../assets/img/me/sunset.webp" alt="Clément Bonnand under a pink sunset sky" fetchpriority="high">
+  </figure>
+  <div class="scroll-cue"><span>scroll</span><i></i></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee" aria-label="Disciplines">
+  <div class="marquee-track" data-marquee>
+    <span><em class="c">Marketing</em><i>/</i><em class="s">Communication</em><i>/</i><em class="c">Brand strategy</em><i>/</i><em class="s">Social media</em><i>/</i><em class="c">AI imagery</em><i>/</i><em class="s">Seeding</em><i>/</i></span>
+  </div>
+</section>
+
+<!-- ============ BRIEF / ABOUT ============ -->
+<section class="brief" id="brief">
+  <div class="brief-grid">
+    <div class="brief-photos">
+      <figure class="torn ph-a"><img width="751" height="1000" src="../assets/img/me/laugh-sm.webp" alt="Clément laughing at a volcanic crater" loading="lazy"></figure>
+    </div>
+    <div class="brief-text">
+      <h2 class="brush-lg boil" data-split>Who's<br>the guy?</h2>
+      <p class="lead">If I had to define myself in one word, I'd say <span class="circled red-ink">creative<svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M14 34 C8 14 50 4 76 6 C108 8 118 24 110 38 C100 54 52 58 26 50 C8 44 6 30 22 20"/></svg></span>.</p>
+      <p>I'm 23, I grew up on <b>Saint-Martin</b> in the Caribbean, and I'm finishing a Master 2 in Marketing, Brand Strategy &amp; Communication while working in the marketing team of <b>DC&nbsp;Shoes Europe</b>. Fashion, surf, art, music and travel are what drive me — and where I want to work.</p>
+      <ul class="facts">
+        <li><span>Degree</span><b>Master 2 — Marketing, Brand Strategy &amp; Communication · INSEEC · 2027</b></li>
+        <li><span>Based in</span><b>Hendaye, Basque coast</b></li>
+        <li><span>Languages</span><b>French · English C1 · Spanish B1</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="story" id="story">
+  <div class="story-head">
+    <span class="dash"></span>
+    <h2 class="brush-xl boil" data-split>My story</h2>
+    <p class="mb-sub">From an <span class="circled">island<svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M14 34 C8 14 50 4 76 6 C108 8 118 24 110 38 C100 54 52 58 26 50 C8 44 6 30 22 20"/></svg></span> in the Caribbean to <span class="underlined">the Atlantic coast<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 12 C60 4 120 16 196 8"/></svg></span></p>
+  </div>
+
+  <div class="chapter ch-island">
+    <div class="ch-sticky">
+      <p class="type-label">Chapter 01 — 18°04′N 63°03′W</p>
+      <p class="ch-big boil">Saint<br>Martin</p>
+      <p class="ch-years"><span class="count" data-count="11">0</span><span class="marker">years on the island</span></p>
+    </div>
+    <div class="ch-body">
+      <p class="lead">Eleven years in <b>Saint-Martin, French West Indies</b>: turquoise water, two languages a day and music coming out of every car window. My eye for colour and my love for reggae and rap start there.</p>
+      <figure class="torn island-img"><svg class="loop" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true"><path d="M150 18 C70 14 22 70 30 150 C38 236 110 288 176 276 C250 262 286 196 270 120 C256 52 196 20 132 30 C80 40 52 84 60 130"/></svg><img width="2200" height="1466" src="../assets/img/me/stmartin.webp" alt="Childhood on a beach in Saint-Martin" loading="lazy"></figure>
+      </div>
+  </div>
+
+  <div class="chapter ch-coast">
+    <div class="ch-sticky">
+      <p class="type-label">Chapter 02 — Landes &amp; Basque coast</p>
+      <p class="ch-big boil">Salt<br>water</p>
+      <p class="ch-years"><span class="marker">surf, school, first brand, Hendaye</span></p>
+    </div>
+    <div class="ch-body">
+      <figure class="torn coast-img"><img width="1800" height="2400" src="../assets/img/me/surf.webp" alt="Clément walking to the waves with his surfboard" loading="lazy"></figure>
+      <p class="lead">Then I moved back to France, on the Atlantic coast.</p>
+      <p>In 2024 surf even became my first project — <b>Surfattitude</b>, a surf-poncho brand I designed and sold myself.</p>
+    </div>
+  </div>
+
+  <div class="chapter ch-road">
+    <div class="ch-sticky">
+      <p class="type-label">Chapter 03 — on the road</p>
+      <p class="ch-big boil">Passport<br>full</p>
+      <p class="ch-years"><span class="count" data-count="10">0</span><span class="marker">places I've been</span></p>
+    </div>
+    <div class="ch-body">
+      <figure class="torn road-img"><img width="1800" height="2400" src="../assets/img/me/crater.webp" alt="Clément at a volcanic crater lagoon" loading="lazy"></figure>
+      <div class="stamp-row" id="stamps">
+        <span class="stamp big">Saint-Martin <small>11 years</small></span>
+        <span class="stamp">Florida</span><span class="stamp">Mexico</span><span class="stamp">Dominican Rep.</span>
+        <span class="stamp">Andalusia</span><span class="stamp">Portugal</span><span class="stamp">Ireland</span>
+        <span class="stamp">New York</span><span class="stamp">Balearics</span><span class="stamp">Lanzarote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PASSIONS ============ -->
+<section class="passions-sec" id="passions-sec">
+  <div class="sil">
+    <img width="2400" height="1802" src="../assets/img/me/silhouette.webp" alt="" loading="lazy" class="sil-img">
+  </div>
+  <div class="off-inner">
+    <p class="type-label">What I'm into</p>
+    <ul class="passions" id="passions">
+      <li><span class="p-word">Fashion</span><span class="p-desc">Streetwear, vintage, skate.</span></li>
+      <li><span class="p-word">Art</span><span class="p-desc">Drawing since forever.</span></li>
+      <li><span class="p-word">Music</span><span class="p-desc">The industry I want to work in.</span></li>
+      <li><span class="p-word">Surf</span><span class="p-desc">Caribbean reefs, Atlantic beach breaks.</span></li>
+      <li><span class="p-word">Travel</span><span class="p-desc">Ten places and counting.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PLAYLIST ============ -->
+<section class="playlist" id="playlist">
+  <div class="pl-head">
+    <p class="type-label">Side quest — the soundtrack</p>
+    <h2 class="brush-xl boil" data-split>On repeat</h2>
+    <p class="pl-sub marker">what's in my headphones while I work. tap a track →</p>
+  </div>
+  <div class="pl-grid">
+    <div class="deck">
+      <div class="vinyl" id="vinyl">
+        <div class="grooves"></div>
+        <div class="v-label"><span class="v-small">C.B. records — vol.1</span><span class="v-now" id="vNow">On repeat</span><span class="v-small" id="vSide">side A / side B</span></div>
+      </div>
+      <div class="arm" id="arm"><i></i></div>
+      <div class="eq" id="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="tracks">
+      <div class="side">
+        <p class="side-title"><span class="brush-sm">Side A</span><span class="type-label">en français — rap &amp; reggae</span></p>
+        <ol id="sideA"></ol>
+      </div>
+      <div class="side">
+        <p class="side-title"><span class="brush-sm">Side B</span><span class="type-label">in English — the rest of the world</span></p>
+        <ol id="sideB"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK (horizontal) ============ -->
+<section class="work" id="work">
+  <div class="work-pin">
+    <div class="work-track">
+      <div class="work-intro">
+        <p class="type-label">Experience — 2021 → 2027</p>
+        <h2 class="brush-xl boil">Case<br>files</h2>
+      </div>
+
+      <article class="case">
+        <span class="tape"></span>
+        <div class="case-num">01</div>
+        <p class="type-label">Oct. 2025 → Sept. 2027 · Work-study · Saint-Jean-de-Luz</p>
+        <h3 class="case-co boil">DC Shoes Europe</h3>
+        <p class="case-role">Marketing Apprentice</p>
+        <ul>
+          <li>Help build and roll out the <b>seasonal marketing strategy</b> across wholesale, retail &amp; e-commerce, alongside Brand Managers &amp; Product Managers.</li>
+          <li>Coordinate <b>studio production</b> for lookbook &amp; e-com: creative briefs, moodboards, looks.</li>
+          <li>Build <b>Social Media Ads</b> campaigns around product launches &amp; key brand moments.</li>
+          <li>Work on <b>collection execution plans</b>, in line with brand goals, marketing assortments &amp; the creative vision.</li>
+          <li>Present marketing &amp; creative directions at <b>kick-off meetings</b>, with ideas for improvement.</li>
+          <li>Align regional needs, buying &amp; marketing assets with the <b>Planning &amp; Design</b> teams.</li>
+          <li>Prepare the <b>monthly marketing presentations</b> shared with international teams and presented to the US headquarters.</li>
+          <li>Run <b>product seeding</b>: sourcing influencers, skaters &amp; artists who fit the brand, and building relationships for future collabs.</li>
+        </ul>
+        <div class="case-stat"><span class="big">2</span><span class="marker">years of<br>work-study</span></div>
+      </article>
+
+      <article class="case case-alt">
+        <span class="tape"></span>
+        <div class="case-num">02</div>
+        <p class="type-label">Jan. 2025 · 5 weeks · Tarbes</p>
+        <h3 class="case-co boil">Rotary Club</h3>
+        <p class="case-role">Communication &amp; Partnerships Intern</p>
+        <ul>
+          <li>Built the <b>multichannel communication plan</b> for the “Vins, Terroir et Traditions” fair: social media &amp; print.</li>
+          <li>Grew the network of <b>partners &amp; exhibitors</b> for the event.</li>
+          <li>Set up <b>Excel dashboards</b> to track accounting &amp; cash flow.</li>
+          <li>A 5-week internship, from planning to event day.</li>
+        </ul>
+        <div class="case-stat"><span class="big">1</span><span class="marker">event,<br>start to finish</span></div>
+      </article>
+
+      <article class="case case-pink">
+        <span class="tape"></span>
+        <div class="case-num">03</div>
+        <p class="type-label">Apr. → Dec. 2024 · Founder · Landes</p>
+        <h3 class="case-co boil">Surfattitude</h3>
+        <p class="case-role">My own surf-poncho brand</p>
+        <ul>
+          <li>Designed a <b>300-piece collection</b> of surf ponchos, from creative idea to production, working directly with the factory (quality, lead times, technical constraints).</li>
+          <li>Led a <b>direct-to-consumer launch</b>, starting with sales on the Landes markets with on-brand visual merchandising.</li>
+          <li>Built &amp; ran the <b>Shopify store</b> (structure, product pages, customer journey) with Instagram-to-shop journeys to drive traffic.</li>
+          <li>Grew awareness through <b>surf-influencer collabs</b>, giveaways &amp; targeted social activations.</li>
+          <li>Handled everything else: <b>orders, shipping, customer service, stock</b> &amp; logistics.</li>
+          <li>Ran Instagram end to end: content, editorial line, community.</li>
+        </ul>
+        <div class="case-stat"><span class="big">300</span><span class="marker">ponchos.<br>zero → one.</span></div>
+      </article>
+
+      <article class="case">
+        <span class="tape"></span>
+        <div class="case-num">04</div>
+        <p class="type-label">Jan. 2023 &amp; Apr. → May 2024 · Saint-Jean-de-Luz</p>
+        <h3 class="case-co boil">DC Shoes</h3>
+        <p class="case-role">Marketing &amp; Product Intern</p>
+        <ul>
+          <li><b>Marketing intern (2024)</b>: created promotional materials &amp; sales tools.</li>
+          <li>Co-presented creative &amp; marketing directions and assortments with Brand &amp; Product Managers.</li>
+          <li>Animated collections on <b>social media &amp; through seeding</b>.</li>
+          <li>Tracked <b>KPIs by channel</b> for the region and suggested action plans to hit targets.</li>
+          <li><b>Assistant Product Manager intern (2023)</b>: competitive analysis &amp; recommendations — brand presentations, seasonal ranges, special projects.</li>
+          <li>Helped organise collection presentations at the <b>DC Showroom</b> and built sales tools (Elastic Suite, PLM).</li>
+          <li>Analysed sales figures and worked with the sales force, planning &amp; samples teams.</li>
+        </ul>
+        <div class="case-stat"><span class="big">2</span><span class="marker">internships<br>before the job</span></div>
+      </article>
+
+      <article class="case">
+        <span class="tape"></span>
+        <div class="case-num">05</div>
+        <p class="type-label">Summers 2021 → 2025</p>
+        <h3 class="case-co boil">Summer jobs</h3>
+        <p class="case-role">Southwest (sales) · Hendaye town hall</p>
+        <ul>
+          <li><b>Southwest</b> (clothing store, Saint-Jean-de-Luz) — sales, customer advice, visual merchandising, restocking &amp; sales events.</li>
+          <li><b>Hendaye town hall</b> (2021) — seasonal municipal agent.</li>
+        </ul>
+        <div class="case-stat"><span class="big">4</span><span class="marker">summers<br>at work</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="school" id="school">
+  <h2 class="brush-md boil" data-split>School of thought</h2>
+  <ol class="school-list">
+    <li class="hl">
+      <span class="yr">2025 — 2027</span>
+      <span class="deg">Master 2 — Marketing, Brand Strategy &amp; Communication <em class="marker">class of 2027 ✶</em></span>
+      <span class="sch">INSEEC MSc · Bordeaux · work-study</span>
+    </li>
+    <li>
+      <span class="yr">2022 — 2025</span>
+      <span class="deg">Bachelor (BUT TC) — Digital Marketing, E-business &amp; Entrepreneurship</span>
+      <span class="sch">IUT de Tarbes</span>
+    </li>
+    <li>
+      <span class="yr">2022</span>
+      <span class="deg">French Baccalauréat — Maths &amp; Physics-Chemistry</span>
+      <span class="sch">High school</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ AI LAB ============ -->
+<section class="ailab" id="ailab">
+  <div class="ai-hero">
+    <p class="type-label">Selected works — generative imagery</p>
+    <h2 class="sr-only">AI Portfolio</h2>
+    <p class="ai-title chap-hand boil" aria-hidden="true">AI portfolio</p>
+    <p class="ai-intro">Concept visuals for <b>DC Shoes</b>, generated with AI: product shots, lifestyle images and social content.</p>
+    <a class="sticker" href="../assets/Clement-Bonnand-AI-Portfolio.pdf" target="_blank" rel="noopener" data-cursor="open">
+      <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#circ">full ai portfolio · pdf · full ai portfolio · pdf ·</textPath></text></svg>
+      <span>↓</span>
+    </a>
+  </div>
+
+  <!-- 01 beauty -->
+  <div class="ai-chapter">
+    <h3 class="chap-title chap-hand boil"><span class="chap-n">01</span>Beauty shots</h3>
+    <p class="chap-sub type-label">Product imagery · generated with AI</p>
+  </div>
+  <div class="belt" data-belt="1"><div class="belt-track" id="belt1"></div></div>
+  <div class="belt" data-belt="-1"><div class="belt-track" id="belt2"></div></div>
+
+  <!-- 02 lifestyle: fly-through -->
+  <div class="ai-chapter">
+    <h3 class="chap-title chap-hand boil"><span class="chap-n">02</span>Lifestyle &amp; vibe</h3>
+    <p class="chap-sub type-label">Campaign concept · DC Shoes Fall/Winter 27</p>
+  </div>
+  <div class="tunnel" id="tunnel">
+    <div class="tunnel-stage" id="tunnelStage">
+      <p class="tunnel-word boil">FALL / WINTER 27</p>
+    </div>
+  </div>
+
+  <!-- 03 social -->
+  <div class="ai-chapter">
+    <h3 class="chap-title chap-hand boil"><span class="chap-n">03</span>Social media</h3>
+    <p class="chap-sub type-label">Instagram stories, posts &amp; profile</p>
+  </div>
+  <div class="phones" id="phones"></div>
+</section>
+
+<!-- ============ SKILLS (physics) ============ -->
+<section class="skills" id="skills">
+  <div class="skills-head">
+    <h2 class="brush-md boil" data-split>Toolbox</h2>
+    <p class="marker">grab them. throw them. they don't break.</p>
+  </div>
+  <div class="pit" id="pit" data-cursor="throw">
+    <noscript><p>Marketing · Communication · Seasonal marketing · Event marketing · Photo shoots · Social media ads · AI imagery · Shopify · Data analysis · Seeding · Artist relations</p></noscript>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <p class="type-label">Next chapter — September 2027</p>
+  <h2 class="contact-big boil" id="repel" aria-label="Let's make noise">Let's make noise</h2>
+  <p class="contact-copy">Master 2 in September 2027 — looking for a <b>full-time role</b> in marketing &amp; communication, ideally in music, fashion or sport.</p>
+  <div class="contact-links">
+    <button class="mail" id="mail" data-cursor="copy" data-mail="clementbonnand1@gmail.com">clementbonnand1@gmail.com</button>
+    <div class="contact-row">
+      <a class="pill" href="mailto:clementbonnand1@gmail.com" data-magnetic>Email me</a>
+      <a class="pill pill-dark" href="https://www.linkedin.com/in/cl%C3%A9ment-bonnand-44ab68271/" target="_blank" rel="noopener" data-magnetic>LinkedIn ↗</a>
+      <a class="pill pill-pink" href="../assets/Clement-Bonnand-AI-Portfolio.pdf" target="_blank" rel="noopener" data-magnetic>AI portfolio (PDF)</a>
+    </div>
+  </div>
+  <p class="thanks boil">thank you</p>
+  <footer class="foot">
+    <span>© 2026 Clément Bonnand</span>
+    <a href="../">see version 01 ↗</a>
+    <a href="#top" data-scramble>back to top ↑</a>
+  </footer>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">close ✕</button>
+  <button class="lb-prev" aria-label="Previous">←</button>
+  <img alt="">
+  <button class="lb-next" aria-label="Next">→</button>
+  <p class="lb-count type-label"></p>
+</div>
+<div class="toast" id="toast">copied ✶</div>
+
+<script src="../assets/js/vendor/gsap.min.js"></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/js/vendor/SplitText.min.js"></script>
+<script src="../assets/js/vendor/Draggable.min.js"></script>
+<script src="../assets/js/vendor/InertiaPlugin.min.js"></script>
+<script src="../assets/js/vendor/lenis.min.js"></script>
+<script src="../assets/js/vendor/matter.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
