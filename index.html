@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clément Bonnand — Marketing, Brand Strategy &amp; Communication</title>
+<meta name="description" content="Clément Bonnand, 23 — marketing &amp; brand strategist. Master 2 in Marketing, Brand Strategy &amp; Communication (2027). DC Shoes Europe, product seeding, artist relations, AI imagery.">
+<meta property="og:title" content="Clément Bonnand — Ideas that make noise">
+<meta property="og:description" content="Marketing, brand strategy &amp; communication. Culture, sport, fashion, music. Available from September 2027.">
+<meta property="og:image" content="assets/img/me/sunset-sm.webp">
+<meta name="theme-color" content="#f6f3ec">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/sedgwick.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/marker.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ SVG DEFS ============ -->
+<svg class="defs" aria-hidden="true" width="0" height="0">
+  <defs>
+    <filter id="boil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence id="boilTurb" type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <img width="379" height="363" class="loader-star" src="assets/img/type/star.webp" alt="">
+    <div class="loader-count"><span id="loadNum">00</span></div>
+    <div class="loader-words"><span id="loadWord">mixing the ink</span></div>
+  </div>
+  <svg class="loader-edge" viewBox="0 0 1000 40" preserveAspectRatio="none"><path id="tornPath" d=""/></svg>
+</div>
+
+<canvas id="ink" aria-hidden="true"></canvas>
+<div id="cursor" aria-hidden="true"><div class="c-dot"></div><div class="c-ring"><span class="c-label"></span></div></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a href="#top" class="nav-logo boil" data-cursor="home">C.B<span class="red">✶</span></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#brief" data-scramble>About</a>
+    <a href="#story" data-scramble>Story</a>
+    <a href="#playlist" data-scramble>Playlist</a>
+    <a href="#work" data-scramble>Work</a>
+    <a href="#ailab" data-scramble>AI&nbsp;Lab</a>
+    <a href="#contact" data-scramble>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button id="inkToggle" class="ink-toggle" data-cursor="toggle" aria-pressed="true">ink: <b>on</b></button>
+    <span class="avail"><i></i>Available Sept. 2027</span>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <h1 class="hero-name">
+    <span class="hn-line hn-1 boil" data-split>Clément</span>
+    <span class="hn-line hn-2"><span class="boil" data-split>Bonnand</span>
+      <svg class="scribble-circle hero-circle" viewBox="0 0 400 130" preserveAspectRatio="none"><path d="M40 78 C18 40 140 10 236 12 C336 14 398 40 384 74 C370 110 236 122 142 114 C58 108 6 90 24 60 C42 32 130 18 214 18"/></svg>
+    </span>
+  </h1>
+
+  <div class="spread-wrap" data-cursor="that's me">
+    <div class="spread">
+      <div class="page page-left">
+        <p class="page-hand">brands<br>are built<br>by people<br>who dare<br>to be<br>loud ✶</p>
+      </div>
+      <div class="page page-right">
+        <img width="2400" height="1802" src="assets/img/me/sunset.webp" alt="Clément Bonnand under a pink sunset sky" fetchpriority="high">
+      </div>
+      <div class="spread-gutter"></div>
+    </div>
+    <div class="hero-note">
+      <svg class="arrow" viewBox="0 0 160 90"><path d="M150 12 C110 6 60 20 34 62"/><path d="M22 44 L32 66 L56 58"/></svg>
+      <span>that's me — 23,<br>raised on an island</span>
+    </div>
+  </div>
+
+  <div class="hero-side">
+    <p class="type-label">Selected works — 2022/2027</p>
+    <h2 class="brush-sm boil">The Brief</h2>
+    <p class="hero-q">What do I <span class="circled">do<svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M14 34 C8 14 50 4 76 6 C108 8 118 24 110 38 C100 54 52 58 26 50 C8 44 6 30 22 20"/></svg></span>, <span class="underlined">exactly?<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 12 C60 4 120 16 196 8"/></svg></span></p>
+    <p class="marker-sm">Concept</p>
+    <p class="hero-copy">I turn culture into brand moments. Marketing &amp; brand strategist at the crossroads of <b>sport, fashion &amp; music</b> — seeding, artist relations, creative direction and AI-generated imagery. Currently shaping seasons at <b>DC&nbsp;Shoes Europe</b>.</p>
+    <p class="hero-meta"><span>Master 2 — Marketing, Brand Strategy &amp; Communication</span><span>Class of 2027 ✶ Bordeaux / Basque Coast</span></p>
+  </div>
+
+  <div class="hero-bleed boil" aria-hidden="true">“ideas that make noise”</div>
+  <div class="scroll-cue"><span>scroll</span><i></i></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee" aria-label="Disciplines">
+  <div class="marquee-track" data-marquee>
+    <span>Brand strategy <img width="379" height="363" src="assets/img/type/star.webp" alt=""> Seeding <img width="379" height="363" src="assets/img/type/star.webp" alt=""> Artist relations <img width="379" height="363" src="assets/img/type/star.webp" alt=""> Creative direction <img width="379" height="363" src="assets/img/type/star.webp" alt=""> AI imagery <img width="379" height="363" src="assets/img/type/star.webp" alt=""> Culture <img width="379" height="363" src="assets/img/type/star.webp" alt=""> Music <img width="379" height="363" src="assets/img/type/star.webp" alt=""> Surf <img width="379" height="363" src="assets/img/type/star.webp" alt=""></span>
+  </div>
+</section>
+
+<!-- ============ BRIEF / ABOUT ============ -->
+<section class="brief" id="brief">
+  <div class="brief-grid">
+    <div class="brief-photos">
+      <figure class="torn ph-a" data-speed="-0.08"><img width="751" height="1000" src="assets/img/me/laugh-sm.webp" alt="Clément laughing at a volcanic crater" loading="lazy"></figure>
+      <figure class="torn ph-b" data-speed="0.1"><img width="1000" height="520" src="assets/img/me/camera-sm.webp" alt="Clément shooting with a film camera" loading="lazy"></figure>
+      <span class="tag marker t1">Lanzarote, ES</span>
+      <span class="tag marker t2">shot on film ✶</span>
+    </div>
+    <div class="brief-text">
+      <h2 class="brush-lg boil" data-split>Who's<br>the guy?</h2>
+      <p class="type-label">File no. 001 — Clément Bonnand</p>
+      <p class="lead">If I had to define myself in one word, I'd say <span class="circled red-ink">creative<svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M14 34 C8 14 50 4 76 6 C108 8 118 24 110 38 C100 54 52 58 26 50 C8 44 6 30 22 20"/></svg></span>. I use it to make every project unique — and different.</p>
+      <p>I'm 23. I grew up on <b>Saint-Martin</b> in the Caribbean for eleven years, learned to surf before I knew what a brand book was, and ended up in the marketing team of <b>DC&nbsp;Shoes Europe</b> on the Basque coast — connecting collections with skaters, artists and the people who make culture move.</p>
+      <p>Driven by many passions, I like to see projects through to the very end, stacking every chance on my side to turn ambitions into results. I'm wired to sport, fashion and culture, with a real appetite for ideas and for activating new talent.</p>
+      <ul class="facts">
+        <li><span>Age</span><b>23</b></li>
+        <li><span>Degree</span><b>Master 2 — Marketing, Brand Strategy &amp; Communication (2027)</b></li>
+        <li><span>Base</span><b>Bordeaux &amp; the Basque Coast, France</b></li>
+        <li><span>Speaks</span><b>French · English C1 · Spanish B1</b></li>
+        <li><span>Next</span><b>Full-time role from Sept. 2027 — music industry first, culture-driven brands always</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto">
+  <p class="manifesto-text" data-reveal-words>I build brands the way culture builds itself — through people, sound and images that stick. A skater who believes in the shoe. An artist who wears the capsule. A picture you can't scroll past.</p>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="story" id="story">
+  <div class="story-head">
+    <span class="dash"></span>
+    <h2 class="brush-xl boil" data-split>My story</h2>
+    <p class="mb-sub">From an <span class="circled">island<svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M14 34 C8 14 50 4 76 6 C108 8 118 24 110 38 C100 54 52 58 26 50 C8 44 6 30 22 20"/></svg></span> in the Caribbean to <span class="underlined">the Atlantic swell<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 12 C60 4 120 16 196 8"/></svg></span></p>
+  </div>
+
+  <div class="chapter ch-island">
+    <div class="ch-sticky">
+      <p class="type-label">Chapter 01 — 18°04′N 63°03′W</p>
+      <p class="ch-big boil">Saint<br>Martin</p>
+      <p class="ch-years"><span class="count" data-count="11">0</span><span class="marker">years on the island</span></p>
+    </div>
+    <div class="ch-body">
+      <p class="lead">I grew up in <b>Saint-Martin, French West Indies</b> — eleven years of turquoise water, trade winds and music coming out of every car window.</p>
+      <p>An island teaches you things a classroom can't: mixing cultures and languages every day, talking to anyone, and knowing that the best ideas usually show up barefoot. My eye for colour, my love for reggae and rap, my obsession with the ocean — it all starts there.</p>
+      <div class="island-card">
+        <div class="sea"><svg viewBox="0 0 600 200" preserveAspectRatio="none"><path class="wave w1" d="M0 120 Q75 90 150 120 T300 120 T450 120 T600 120 V200 H0Z"/><path class="wave w2" d="M0 140 Q75 115 150 140 T300 140 T450 140 T600 140 V200 H0Z"/></svg></div>
+        <div class="sun"></div>
+        <p class="island-txt marker">Caribbean kid.<br>forever.</p>
+      </div>
+      <ul class="island-list">
+        <li><b>Languages</b> French at home, English &amp; Spanish in the streets.</li>
+        <li><b>Soundtrack</b> Bob Marley on the beach, rap in the headphones.</li>
+        <li><b>First board</b> long before the first business card.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chapter ch-coast">
+    <div class="ch-sticky">
+      <p class="type-label">Chapter 02 — Landes &amp; Basque coast</p>
+      <p class="ch-big boil">Salt<br>water</p>
+      <p class="ch-years"><span class="marker">surf, school, first brand</span></p>
+    </div>
+    <div class="ch-body">
+      <figure class="torn coast-img"><img width="1800" height="2400" src="assets/img/me/surf.webp" alt="Clément walking to the waves with his surfboard" loading="lazy"></figure>
+      <p class="lead">Back in mainland France, I followed the swell to the Atlantic coast.</p>
+      <p>Surf shaped the way I work: read the conditions, commit, fall, paddle back out. In 2024 it even became my first business — <b>Surfattitude</b>, a surf-poncho brand I designed, produced and sold myself on the Landes markets. Today I'm on the Basque coast, inside DC Shoes, where board culture is the job.</p>
+    </div>
+  </div>
+
+  <div class="chapter ch-road">
+    <div class="ch-sticky">
+      <p class="type-label">Chapter 03 — on the road</p>
+      <p class="ch-big boil">Passport<br>full</p>
+      <p class="ch-years"><span class="count" data-count="10">0</span><span class="marker">places that rewired my eye</span></p>
+    </div>
+    <div class="ch-body">
+      <figure class="torn road-img"><img width="1800" height="2400" src="assets/img/me/crater.webp" alt="Clément at a volcanic crater lagoon" loading="lazy"></figure>
+      <p class="lead">Every trip is a new reference library.</p>
+      <p>Street style in New York, colours in Mexico, the light in Andalusia, the music in Dominican Republic, the waves in Portugal and Ireland. I bring something back from every place — a reference, a sound, an idea for a brand.</p>
+      <div class="stamp-row" id="stamps">
+        <span class="stamp big">Saint-Martin <small>11 years</small></span>
+        <span class="stamp">Florida</span><span class="stamp">Mexico</span><span class="stamp">Dominican Rep.</span>
+        <span class="stamp">Andalusia</span><span class="stamp">Portugal</span><span class="stamp">Ireland</span>
+        <span class="stamp">New York</span><span class="stamp">Balearics</span><span class="stamp">Lanzarote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PASSIONS ============ -->
+<section class="passions-sec" id="passions-sec">
+  <div class="sil">
+    <img width="2400" height="1802" src="assets/img/me/silhouette.webp" alt="" loading="lazy" class="sil-img">
+    <p class="sil-text boil">raised on an island.<br>wired for culture.</p>
+  </div>
+  <div class="off-inner">
+    <p class="type-label">What keeps me up at night</p>
+    <ul class="passions" id="passions">
+      <li data-img="assets/img/me/garden-sm.webp"><span class="p-word">Fashion</span><span class="p-desc">Streetwear, vintage, skate. Clothes are the fastest way to say who you are.</span></li>
+      <li data-img="assets/img/ai/lifestyle-21.webp"><span class="p-word">Art</span><span class="p-desc">Drawing since forever. Galleries, graffiti, album covers — I collect images.</span></li>
+      <li data-img="assets/img/ai/lifestyle-13.webp"><span class="p-word">Music</span><span class="p-desc">French rap, reggae, indie, electro. The industry I want to work in next.</span></li>
+      <li data-img="assets/img/me/surf-sm.webp"><span class="p-word">Surf</span><span class="p-desc">Caribbean reefs first, Atlantic beach breaks now. The best ideas come in the water.</span></li>
+      <li data-img="assets/img/me/crater-sm.webp"><span class="p-word">Travel</span><span class="p-desc">Ten places and counting. Every trip ends up in a project.</span></li>
+      <li data-img="assets/img/me/camera-sm.webp"><span class="p-word">Photo</span><span class="p-desc">Film camera always around the neck. Framing is a marketing skill.</span></li>
+    </ul>
+  </div>
+  <img class="float-img" id="floatImg" alt="" aria-hidden="true">
+</section>
+
+<!-- ============ PLAYLIST ============ -->
+<section class="playlist" id="playlist">
+  <div class="pl-head">
+    <p class="type-label">Side quest — the soundtrack</p>
+    <h2 class="brush-xl boil" data-split>On repeat</h2>
+    <p class="pl-sub marker">what's in my headphones while I work. tap a track →</p>
+  </div>
+  <div class="pl-grid">
+    <div class="deck">
+      <div class="vinyl" id="vinyl">
+        <div class="grooves"></div>
+        <div class="v-label"><span class="v-small">C.B. records — vol.1</span><span class="v-now" id="vNow">On repeat</span><span class="v-small" id="vSide">side A / side B</span></div>
+      </div>
+      <div class="arm" id="arm"><i></i></div>
+      <div class="eq" id="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="tracks">
+      <div class="side">
+        <p class="side-title"><span class="brush-sm">Side A</span><span class="type-label">en français — rap &amp; reggae</span></p>
+        <ol id="sideA"></ol>
+      </div>
+      <div class="side">
+        <p class="side-title"><span class="brush-sm">Side B</span><span class="type-label">in English — the rest of the world</span></p>
+        <ol id="sideB"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK (horizontal) ============ -->
+<section class="work" id="work">
+  <div class="work-pin">
+    <div class="work-track">
+      <div class="work-intro">
+        <p class="type-label">Experience — 2022 → 2027</p>
+        <h2 class="brush-xl boil">Case<br>files</h2>
+        <p class="work-hint marker">keep scrolling →</p>
+      </div>
+
+      <article class="case">
+        <span class="tape"></span>
+        <div class="case-num">01</div>
+        <p class="type-label">2025 → 2027 · Work-study · Saint-Jean-de-Luz</p>
+        <h3 class="case-co boil">DC Shoes Europe</h3>
+        <p class="case-role">Marketing Apprentice</p>
+        <ul>
+          <li>Help build and roll out the <b>seasonal marketing strategy</b> across wholesale, retail &amp; e-commerce.</li>
+          <li>Run <b>product seeding</b>: sourcing influencers, skaters &amp; artists who fit the brand's DNA.</li>
+          <li>Build relationships with <b>artists (rap, rock…)</b> that open doors to collabs &amp; exclusive capsules.</li>
+          <li>Steer <b>studio production</b> for lookbook &amp; e-com: creative briefs, moodboards, looks.</li>
+          <li>Present marketing &amp; creative directions at season <b>kick-offs</b>.</li>
+          <li>Co-build the <b>monthly marketing presentations</b> delivered by the Brand Manager to the US headquarters.</li>
+        </ul>
+        <div class="case-stat"><span class="big">3</span><span class="marker">channels — wholesale,<br>retail, e-com</span></div>
+      </article>
+
+      <article class="case case-alt">
+        <span class="tape"></span>
+        <div class="case-num">02</div>
+        <p class="type-label">2023 → 2025 · Internships · Saint-Jean-de-Luz</p>
+        <h3 class="case-co boil">DC Shoes</h3>
+        <p class="case-role">Marketing &amp; Product Marketing Intern</p>
+        <ul>
+          <li>Competitive analysis and <b>reactive / proactive recommendations</b>: brand presentations, seasonal ranges, special projects.</li>
+          <li>Helped organise collection presentations at the <b>DC Showroom</b>.</li>
+          <li>Built sales tools for showrooms &amp; catalogues (Elastic Suite, PLM).</li>
+          <li>Turned sales figures into <b>data-driven recommendations</b>.</li>
+          <li>Worked alongside Brand Managers &amp; Product Managers on launches, social animation &amp; seeding.</li>
+        </ul>
+        <div class="case-stat"><span class="big">4</span><span class="marker">years inside<br>the brand</span></div>
+      </article>
+
+      <article class="case case-pink">
+        <span class="tape"></span>
+        <div class="case-num">03</div>
+        <p class="type-label">Apr → Dec 2024 · Founder · Landes coast</p>
+        <h3 class="case-co boil">Surfattitude</h3>
+        <p class="case-role">My own surf-poncho brand</p>
+        <ul>
+          <li>Designed a <b>300-unit collection</b> of surf ponchos, from creative concept to production, directly with the factory.</li>
+          <li>Led a <b>direct-to-consumer launch</b>, starting with pop-up sales on the Landes markets.</li>
+          <li>Built &amp; ran the <b>Shopify store</b>, with Instagram-to-shop journeys to drive traffic &amp; conversion.</li>
+          <li>Grew awareness with <b>surf-influencer collabs</b>, giveaways &amp; targeted social activations.</li>
+          <li>Ran Instagram end to end: content, editorial line, community.</li>
+        </ul>
+        <div class="case-stat"><span class="big">300</span><span class="marker">ponchos.<br>zero → one.</span></div>
+      </article>
+
+      <article class="case">
+        <span class="tape"></span>
+        <div class="case-num">04</div>
+        <p class="type-label">Summers 2022 · 2023 · 2025</p>
+        <h3 class="case-co boil">Southwest</h3>
+        <p class="case-role">Sales Associate — clothing</p>
+        <ul>
+          <li>Sales &amp; customer advice on the shop floor.</li>
+          <li>Visual merchandising, restocking &amp; retail operations.</li>
+          <li>Clearance events &amp; commercial operations.</li>
+        </ul>
+        <p class="case-aside marker">where I learned what people actually buy — and why.</p>
+        <div class="case-stat"><span class="big">3</span><span class="marker">summers on<br>the floor</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="school" id="school">
+  <h2 class="brush-md boil" data-split>School of thought</h2>
+  <ol class="school-list">
+    <li class="hl">
+      <span class="yr">2025 — 2027</span>
+      <span class="deg">Master 2 — Marketing, Brand Strategy &amp; Communication <em class="marker">class of 2027 ✶</em></span>
+      <span class="sch">INSEEC MSc · Bordeaux · work-study</span>
+    </li>
+    <li>
+      <span class="yr">2022 — 2025</span>
+      <span class="deg">Bachelor (BUT TC) — Digital Marketing, E-business &amp; Entrepreneurship</span>
+      <span class="sch">IUT de Tarbes</span>
+    </li>
+    <li>
+      <span class="yr">2022</span>
+      <span class="deg">French Baccalauréat — Maths &amp; Physics-Chemistry</span>
+      <span class="sch">High school</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ AI LAB ============ -->
+<section class="ailab" id="ailab">
+  <div class="ai-hero">
+    <img width="379" height="363" class="ai-star s1" src="assets/img/type/star.webp" alt="">
+    <img width="379" height="363" class="ai-star s2" src="assets/img/type/star.webp" alt="">
+    <img width="379" height="363" class="ai-star s3" src="assets/img/type/star.webp" alt="">
+    <p class="type-label">Selected works — generative imagery</p>
+    <h2 class="sr-only">AI Portfolio</h2>
+    <img width="2000" height="437" class="ai-title" src="assets/img/type/ai-portfolio.webp" alt="AI portfolio">
+    <p class="ai-intro">Concept campaigns for <b>DC Shoes</b>, fully generated with AI — I write the prompts, set the art direction and ship the visuals. Product shots, lifestyle worlds and social content, without a single studio day.</p>
+    <a class="sticker" href="assets/Clement-Bonnand-AI-Portfolio.pdf" target="_blank" rel="noopener" data-cursor="open">
+      <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#circ">full ai portfolio · pdf · full ai portfolio · pdf ·</textPath></text></svg>
+      <span>↓</span>
+    </a>
+  </div>
+
+  <div class="ai-can">
+    <img width="2000" height="250" class="ai-can-title" src="assets/img/type/what-ai.webp" alt="What AI can do">
+    <div class="can-grid">
+      <div><b>01</b><h4>E-commerce PDP shots</h4><p>Clean, consistent product photos ready for the product page.</p></div>
+      <div><b>02</b><h4>Beauty shots</h4><p>Hero imagery with studio-grade lighting, set design and materials.</p></div>
+      <div><b>03</b><h4>One set, every product</h4><p>Keep the same background and swap in a whole product range.</p></div>
+      <div><b>04</b><h4>Lifestyle imagery</h4><p>A defined set, mood and vibe, held across every image.</p></div>
+      <div><b>05</b><h4>Any format</h4><p>Pick the ratio, then reframe one image into stories, posts and banners.</p></div>
+      <div><b>06</b><h4>Social-ready content</h4><p>Stories, carousels and feed posts built straight from the shoot.</p></div>
+    </div>
+  </div>
+
+  <!-- 01 beauty -->
+  <div class="ai-chapter">
+    <img width="2000" height="293" class="chap-title" src="assets/img/type/beauty-title.webp" alt="01 Beauty shots">
+    <p class="chap-sub type-label">Hero product imagery · studio-grade lighting · set design &amp; materials · all generated with AI</p>
+  </div>
+  <div class="belt" data-belt="1"><div class="belt-track" id="belt1"></div></div>
+  <div class="belt" data-belt="-1"><div class="belt-track" id="belt2"></div></div>
+
+  <div class="ai-sub">
+    <p class="type-label">Winter focus — DC Shoes gift guide</p>
+    <div class="bento" id="gift"></div>
+    <p class="type-label">DC Shoes — category dividers</p>
+    <div class="bento bento-3" id="category"></div>
+  </div>
+
+  <!-- 02 lifestyle: fly-through -->
+  <div class="ai-chapter">
+    <img width="2000" height="946" class="chap-title chap-title-lg" src="assets/img/type/lifestyle-title.webp" alt="02 Lifestyle and vibe">
+    <p class="chap-sub type-label">Culture-driven campaign imagery for DC Shoes Fall/Winter 27 · street, night, ice &amp; chrome · one visual universe</p>
+  </div>
+  <div class="tunnel" id="tunnel">
+    <div class="tunnel-stage" id="tunnelStage">
+      <p class="tunnel-word boil">FALL / WINTER 27</p>
+    </div>
+  </div>
+
+  <!-- 03 social -->
+  <div class="ai-chapter">
+    <img width="2000" height="629" class="chap-title" src="assets/img/type/social-title.webp" alt="03 Social media mockups">
+    <p class="chap-sub type-label">Putting the Winter 27 imagery to work · stories · carousels · feed posts · profile</p>
+  </div>
+  <div class="phones" id="phones"></div>
+  <div class="carousel-strip" id="carousel"></div>
+</section>
+
+<!-- ============ SKILLS (physics) ============ -->
+<section class="skills" id="skills">
+  <div class="skills-head">
+    <h2 class="brush-md boil" data-split>Toolbox</h2>
+    <p class="marker">grab them. throw them. they don't break.</p>
+  </div>
+  <div class="pit" id="pit" data-cursor="throw">
+    <noscript><p>Brand strategy · Product seeding · Influence marketing · Artist relations · Creative direction · Studio production · AI imagery · Social media · Shopify · E-commerce · Data analysis · Merchandising · Go-to-market · Trend scouting · Pitching</p></noscript>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <p class="type-label">Next chapter — September 2027</p>
+  <h2 class="contact-big boil" id="repel" aria-label="Let's make noise">Let's make noise</h2>
+  <p class="contact-copy">Graduating with a Master 2 in Marketing, Brand Strategy &amp; Communication in September 2027 and looking for a <b>full-time role</b> — music industry first, culture-driven brands always.</p>
+  <div class="contact-links">
+    <button class="mail" id="mail" data-cursor="copy" data-mail="clementbonnand1@gmail.com">clementbonnand1@gmail.com</button>
+    <div class="contact-row">
+      <a class="pill" href="mailto:clementbonnand1@gmail.com" data-magnetic>Email me</a>
+      <a class="pill pill-dark" href="https://www.linkedin.com/in/cl%C3%A9ment-bonnand-44ab68271/" target="_blank" rel="noopener" data-magnetic>LinkedIn ↗</a>
+      <a class="pill pill-pink" href="assets/Clement-Bonnand-AI-Portfolio.pdf" target="_blank" rel="noopener" data-magnetic>AI portfolio (PDF)</a>
+    </div>
+  </div>
+  <img width="2000" height="413" class="thanks" src="assets/img/type/thank-you.webp" alt="Thank you">
+  <footer class="foot">
+    <span>© 2026 Clément Bonnand</span>
+    <span>made with ink, sand &amp; code</span>
+    <a href="#top" data-scramble>back to top ↑</a>
+  </footer>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">close ✕</button>
+  <button class="lb-prev" aria-label="Previous">←</button>
+  <img alt="">
+  <button class="lb-next" aria-label="Next">→</button>
+  <p class="lb-count type-label"></p>
+</div>
+<div class="toast" id="toast">copied ✶</div>
+
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/vendor/SplitText.min.js"></script>
+<script src="assets/js/vendor/Draggable.min.js"></script>
+<script src="assets/js/vendor/InertiaPlugin.min.js"></script>
+<script src="assets/js/vendor/lenis.min.js"></script>
+<script src="assets/js/vendor/matter.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
