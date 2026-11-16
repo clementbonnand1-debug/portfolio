@@ -93,7 +93,7 @@
   const wordTimer = setInterval(() => { wi = (wi + 1) % words.length; wordEl.textContent = words[wi]; }, 420);
   const assetsReady = Promise.all([
     document.fonts ? document.fonts.ready : Promise.resolve(),
-    new Promise(r => { const i = $(".page-right img"); i.complete ? r() : (i.onload = i.onerror = r); }),
+    new Promise(r => { const i = $(".hero-photo img"); i.complete ? r() : (i.onload = i.onerror = r); }),
     new Promise(r => setTimeout(r, reduced ? 200 : 1900)),
   ]);
   gsap.to(counter, { v: 86, duration: reduced ? .2 : 1.7, ease: "power2.out", onUpdate: () => num.textContent = String(Math.round(counter.v)).padStart(2, "0") });
@@ -115,28 +115,12 @@
   function heroIntro() {
     $$(".hero [data-split]").forEach((el, i) => revealSplit(el, i * .18));
     drawPath($$(".hero-circle path"), { delay: .9, duration: 1.3 });
-    gsap.from(".spread", { rotateY: -55, rotateX: 12, scale: .7, opacity: 0, duration: 1.6, ease: "expo.out", delay: .35 });
-    gsap.from(".page-hand", { xPercent: -60, duration: 1.6, ease: "expo.out", delay: .6 });
-    gsap.from(".hero-side > *", { y: 30, opacity: 0, duration: .9, stagger: .07, ease: "power3.out", delay: .7 });
-    gsap.from(".hero-bleed", { xPercent: 30, opacity: 0, duration: 1.6, ease: "expo.out", delay: .5 });
-    gsap.from(".hero-note", { opacity: 0, y: 20, duration: .8, delay: 1.6 });
-    drawPath($$(".hero-note .arrow path"), { delay: 1.7, duration: .8 });
-    drawPath($$(".hero-side svg path"), { delay: 1.4 });
+    gsap.from(".hero-photo", { y: 120, rotate: 12, scale: .8, opacity: 0, duration: 1.6, ease: "expo.out", delay: .3 });
+    gsap.from(".hero-kicker, .hero-line, .hero-avail", { y: 30, opacity: 0, duration: .9, stagger: .1, ease: "power3.out", delay: .9 });
     gsap.from(".nav > *", { y: -40, opacity: 0, duration: .9, stagger: .08, ease: "power3.out", delay: .4 });
   }
-  // tilt the magazine with the mouse
-  if (fine && !reduced) {
-    const sp = $(".spread");
-    const rx = gsap.quickTo(sp, "rotateX", { duration: .8, ease: "power3" });
-    const ry = gsap.quickTo(sp, "rotateY", { duration: .8, ease: "power3" });
-    $(".hero").addEventListener("mousemove", e => {
-      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
-      ry(x * 16); rx(-y * 12);
-    });
-  }
-  gsap.to(".hero-name", { yPercent: -18, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-  gsap.to(".hero-bleed", { xPercent: -25, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-  gsap.to(".spread-wrap", { yPercent: 12, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+  gsap.to(".hero-left", { yPercent: -10, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+  gsap.to(".hero-photo", { yPercent: 10, rotate: -2, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
 
   /* ---------- scroll velocity ---------- */
   let velocity = 0;
@@ -177,11 +161,6 @@
     ScrollTrigger.create({ trigger: p.closest("span"), start: "top 85%", once: true, onEnter: () => drawPath(p, { delay: .3 }) });
   });
   gsap.from(".facts li", { x: -40, opacity: 0, stagger: .08, duration: .8, ease: "power3.out", scrollTrigger: { trigger: ".facts", start: "top 85%" } });
-
-  /* ---------- manifesto words ---------- */
-  const man = $("[data-reveal-words]");
-  man.innerHTML = man.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(" ");
-  gsap.to(".manifesto .w", { opacity: 1, stagger: .1, ease: "none", scrollTrigger: { trigger: ".manifesto", start: "top 75%", end: "bottom 60%", scrub: true } });
 
   /* ---------- story ---------- */
   $$(".count").forEach(c => {
@@ -257,8 +236,6 @@
   });
   gsap.from(".ai-title", { scale: .4, rotate: -8, opacity: 0, duration: 1.4, ease: "expo.out", scrollTrigger: { trigger: ".ai-hero", start: "top 60%" } });
   $$(".ai-star").forEach((s, i) => gsap.to(s, { rotate: i % 2 ? -360 : 360, ease: "none", scrollTrigger: { trigger: "#ailab", start: "top bottom", end: "bottom top", scrub: 1 } }));
-  gsap.from(".can-grid > div", { y: 60, opacity: 0, stagger: .08, duration: .9, ease: "power3.out", scrollTrigger: { trigger: ".can-grid", start: "top 85%" } });
-  gsap.from(".ai-can-title", { x: -120, opacity: 0, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: ".ai-can", start: "top 75%" } });
   $$(".chap-title").forEach(t => gsap.from(t, { scale: .7, y: 60, opacity: 0, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: t, start: "top 85%" } }));
 
   // lightbox registration helper
@@ -277,12 +254,6 @@
     list.forEach((src, i) => t.appendChild(figure(src, "beauty", i + off, "belt-item")));
   });
   if (!reduced) { looper($("#belt1"), .7, 1); looper($("#belt2"), .7, -1); }
-  // bentos
-  groups.gift = GIFT; groups.category = CATEGORY;
-  GIFT.forEach((s, i) => $("#gift").appendChild(figure(s, "gift", i)));
-  CATEGORY.forEach((s, i) => $("#category").appendChild(figure(s, "category", i)));
-  $$(".bento").forEach(b => gsap.to($$("figure", b), { clipPath: "inset(0 0 0% 0)", duration: 1.2, ease: "expo.inOut", stagger: .08, scrollTrigger: { trigger: b, start: "top 80%" } }));
-
   // lifestyle tunnel
   groups.life = LIFE;
   const stage = $("#tunnelStage");
@@ -326,10 +297,6 @@
     $("#phones").appendChild(img);
     gsap.fromTo(img, { y: 120 + i * 30 }, { y: -60 - (i % 3) * 40, ease: "none", scrollTrigger: { trigger: "#phones", start: "top bottom", end: "bottom top", scrub: true } });
   });
-  groups.carousel = CAROUSEL;
-  CAROUSEL.forEach((s, i) => { const f = figure(s, "carousel", i); f.style.setProperty("--r", rand(-6, 6) + "deg"); $("#carousel").appendChild(f); });
-  gsap.from("#carousel figure", { y: 100, opacity: 0, stagger: .07, duration: 1, ease: "back.out(1.6)", scrollTrigger: { trigger: "#carousel", start: "top 90%" } });
-
   /* ---------- lightbox ---------- */
   const lb = $("#lightbox"), lbImg = $("img", lb), lbCount = $(".lb-count", lb);
   let lbGroup = null, lbI = 0;
@@ -359,10 +326,8 @@
 
   /* ---------- skills physics ---------- */
   const SKILLS = [
-    ["Brand strategy", 1], ["Product seeding", 0], ["Influence marketing", 2], ["Artist relations", 3],
-    ["Creative direction", 1], ["Music culture", 5], ["Studio production", 0], ["AI imagery", 2],
-    ["Social media", 4], ["Shopify", 0], ["E-commerce", 5], ["Data analysis", 1], ["Merchandising", 0],
-    ["Go-to-market", 3], ["Trend scouting", 2], ["Pitching", 4], ["English C1", 5], ["Español B1", 5], ["Wholesale", 0], ["Storytelling", 1]
+    ["Marketing", 1], ["Communication", 0], ["Seasonal marketing", 2], ["Event marketing", 4], ["Photo shoots", 0],
+    ["Social media ads", 1], ["AI imagery", 2], ["Shopify", 5], ["Data analysis", 0], ["Seeding", 4], ["English C1", 5], ["Español B1", 5], ["Artist relations", 3]
   ];
   (function physics() {
     const pit = $("#pit");
